@@ -12,6 +12,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { CoverComponent } from './home/cover/cover.component';
 import { BlogListComponent } from './home/blog-list/blog-list.component';
 import { HomeComponent } from './home/home.component';
+import { HttpClient } from  '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClient
   ],
   providers: [],
   bootstrap: [AppComponent]

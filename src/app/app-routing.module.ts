@@ -1,13 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddBlogComponent } from './Components/add-blog/add-blog.component';
-import { HomeComponent } from './Components/home/home.component';
+
+import { CreateBlogComponent } from './create-blog/create-blog.component';
+import { DetailblogComponent } from './detailblog/detailblog.component';
+import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
 const routes: Routes = [
+  {path:'home', redirectTo:'/home',pathMatch:'full'},
   { path: 'home', component: HomeComponent  },
-  { path: 'add-blog', component: AddBlogComponent  }
+  { path: 'blog/:id', component: DetailblogComponent },
+  { path: 'addblog', component: CreateBlogComponent },
+  {path:'**', component: NotFoundComponent} 
+
+
 
 ];
 

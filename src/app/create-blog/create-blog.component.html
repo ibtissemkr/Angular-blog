@@ -4,21 +4,23 @@
     <h2 class="text-center"> Create Blog  </h2>
 
     <div class="col-6 mx-auto">
+        <input [(ngModel)]="blog.author" type="text" class="form-control m-1" placeholder="author"  required >
 
      
 
-        <input  type="text" class="form-control m-1" placeholder="title">
+        <input [(ngModel)]="blog.title" type="text" class="form-control m-1" placeholder="title"  required >
         
      
-        <input type="file"  class="form-control m-1" placeholder="image">
-        <textarea  title="" id="" cols="30" rows="4" placeholder="description" class="form-control m-1" ></textarea>
-
+        <input type="file" (change)="select($event)" class="form-control m-1" placeholder="image" required>
+        <textarea [(ngModel)]="blog.description" title="" id="" cols="30" rows="4" placeholder="content" class="form-control m-1" ></textarea>
         <div class="m-1">
-         <textarea  [placeholder]="'Enter text here...'" ></textarea>
+            <textarea  [placeholder]="'Enter text here...'" ></textarea>
+   
+           </div>
 
-        </div>
+        
 
-        <button  class="btn btn-dark form-control m-1">create</button>
+        <button (click)="create()"  type ="submit" class="btn btn-dark form-control m-1" aria-required="true">create</button>
 
 
     </div>
